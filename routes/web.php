@@ -21,6 +21,6 @@ Route::get(
 );
 
 Route::get(
-	'/projects',
-	'MainController@project'
+	'/gallery',
+	'MainController@gallery'
 );

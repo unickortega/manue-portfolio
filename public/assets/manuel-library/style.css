@@ -2,3 +2,23 @@
 	color: #220229;
     font-weight: bold;
 }
+
+.more-photo-filter{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	text-align: center;
+	cursor: pointer;
+	height: 100%;
+	margin-top: auto;
+	align-items: center;
+	display: none;
+	background: #a0a0a085;
+}
+
+.carousel:hover .more-photo-filter{
+	display: flex;
+}

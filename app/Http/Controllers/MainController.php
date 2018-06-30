@@ -12,8 +12,8 @@ class MainController extends Controller
     	return view('portfolio.index');
     }
 
-    public function project()
+    public function gallery()
     {
-    	return view('portfolio.project');
+    	return view('portfolio.gallery');
     }
 }

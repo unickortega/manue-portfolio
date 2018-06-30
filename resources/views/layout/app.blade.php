@@ -8,94 +8,78 @@
 
 	<title>My Portfolio</title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 
 	<!--     Fonts and icons     -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  	<!-- CSS Files -->
+  	<link href="{{ asset('assets/css/material-kit.css?v=2.0.3') }}" rel="stylesheet" />
+  	<!-- CSS Just for demo purpose, don't include it in your project -->
+  	<link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
+
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/manuel-library/style.css')}}">
 
-	<!-- CSS Files -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/material-kit.css" rel="stylesheet"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 
-<body>
-	<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
-    	<div class="container">
-        	<!-- Brand and toggle get grouped for better mobile display -->
-        	<div class="navbar-header">
-        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
-            		<span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-        		</button>
-        		<a class="navbar-brand" href="{{ url('/') }}">Portfolio</a>
-        	</div>
+<body class="profile-page sidebar-collapse">
 
-        	<div class="collapse navbar-collapse" id="navigation-example">
-        		<ul class="nav navbar-nav navbar-right">
-					<li>
-    					<a href="{{ url('/projects') }}">
-    						Projects
-    					</a>
-    				</li>
-        		</ul>
-        	</div>
-    	</div>
-    </nav>
+    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="{{ url('/') }}">
+          Portfolio </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('gallery') }}">
+              <i class="far fa-images"></i>
+              Gallery
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/images/bg.jpg');"></div>
+  <div class="main main-raised">
+    
+  	@yield('content')
 
-    @yield('content')
+  </div>
+  <footer class="footer footer-default">
+    <div class="container">
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, Manuel Ortega Jr.
+      </div>
+    </div>
+  </footer>
 
-    <footer class="footer">
-        <div class="container">
-            <!--<nav class="pull-left">
-				<ul>
-					<li>
-						<a href="http://www.creative-tim.com">
-							Creative Tim
-						</a>
-					</li>
-					<li>
-						<a href="http://presentation.creative-tim.com">
-						   About Us
-						</a>
-					</li>
-					<li>
-						<a href="http://blog.creative-tim.com">
-						   Blog
-						</a>
-					</li>
-					<li>
-						<a href="http://www.creative-tim.com/license">
-							Licenses
-						</a>
-					</li>
-				</ul>
-            </nav>-->
-            <div class="copyright pull-right">
-                &copy; 2018, Manuel U. Ortega Jr.
-            </div>
-        </div>
-    </footer>
-
+    <!--   Core JS Files   -->
+	<script src="{{ asset('assets/js/core/jquery.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/js/core/popper.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('assets/js/plugins/moment.min.js') }}"></script>
+	<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+	<script src="{{ asset('assets/js/plugins/bootstrap-datetimepicker.js') }}" type="text/javascript"></script>
+	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+	<script src="{{ asset('assets/js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
+	<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+	<script src="{{ asset('assets/js/material-kit.js?v=2.0.3') }}" type="text/javascript"></script>
 
 </body>
-	<!--   Core JS Files   -->
-	<script src="{{asset('assets/js/jquery.min.js')}}" type="text/javascript"></script>
-	<script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
-	<script src="{{asset('assets/js/material.min.js')}}"></script>
-
-	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-	<script src="{{asset('assets/js/nouislider.min.js')}}" type="text/javascript"></script>
-
-	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-	<script src="{{asset('assets/js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
-
-	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-	<script src="{{asset('assets/js/material-kit.js')}}" type="text/javascript"></script>
 
 </html>
